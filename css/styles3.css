@@ -1,0 +1,90 @@
+.container {
+  padding: 40px;
+  margin: 0 auto;
+}
+
+.teacher-list {
+  padding-inline-start: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: 20px;
+}
+
+.teacher {
+  list-style-type: none;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-areas:
+    "name image"
+    "house image"
+    "patronus image"
+    "delete-btn image"
+    "edit-btn image";
+  text-align: left;
+  border: 1px solid rgba(68, 83, 147, 0.8);
+  transition: transform 500ms ease-in-out;
+}
+
+.teacher:hover {
+  transform: scale(1.05);
+}
+
+.teacher > h2 {
+  grid-area: name;
+}
+
+.teacher-house {
+  grid-area: house;
+}
+
+.teacher-patronus {
+  grid-area: patronus;
+  margin: 0;
+  margin-top: 3px;
+  visibility: hidden;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: white;
+}
+
+.teacher-image {
+  max-height: 150px;
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+}
+
+#delete-btn {
+  border: none;
+  font-weight: 600;
+  font-style: normal;
+  width: 200px;
+  border-radius: 8px;
+  background-color: #e63838;
+  grid-area: delete-btn;
+  margin-bottom: 5px;
+}
+
+#delete-btn:hover {
+  opacity: 60%;
+}
+
+#edit-btn {
+  border: none;
+  font-weight: 600;
+  font-style: normal;
+  width: 200px;
+  border-radius: 8px;
+  background-color: #4e4e4e;
+  grid-area: edit-btn;
+  margin-bottom: 5px;
+}
+
+#edit-btn:hover {
+  opacity: 60%;
+}
