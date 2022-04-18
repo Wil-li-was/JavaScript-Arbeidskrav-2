@@ -13,8 +13,6 @@ fetch("http://hp-api.herokuapp.com/api/characters")
 
 let staffMembers;
 
-
-
 function renderData(data) {
   staffMembers = data.filter(function (data) {
     return data.hogwartsStaff == true;
@@ -23,17 +21,14 @@ function renderData(data) {
   return staffMembers;
 }
 
-
-
 const teacherList = document.querySelector(".teacher-list");
-
 
 const displayTeacher = (hogwartsStaffList) => {
   console.log(hogwartsStaffList);
   hogwartsStaffList.forEach((staffMember) => {
     let placeholder = staffMember.image;
     if (staffMember.image === "") {
-      placeholder = "./images/defaultimage.png";
+      placeholder = "/img/defaultimage.png";
     }
     let hogwartsHouse = staffMember.house;
     if (staffMember.house === "") {
@@ -51,8 +46,6 @@ const displayTeacher = (hogwartsStaffList) => {
         </li>
         `;
   });
-
-
 
   let teachers = document.body.querySelectorAll(".teacher");
   for (let teacher of teachers) {
